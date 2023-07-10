@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 class Xylophone extends StatelessWidget {
+
+  void playPiano(int num){
+    final player =AudioPlayer();
+    player.play(AssetSource("note$num.wav"));
+
+  }
   const Xylophone({Key? key}) : super(key: key);
 
   @override
@@ -10,30 +16,47 @@ class Xylophone extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Button(color: Colors.red, onpreSS: (){
+            Expanded(
+              child: Button(color: Colors.red, onpreSS: (){
+                playPiano(1);
+              }),
+            ),
+            Expanded(
+              child: Button(color: Colors.green, onpreSS: (){
+                playPiano(2);
+              }),
+            ),
 
-                final player =AudioPlayer();
-                player.play(AssetSource("note1.wav"));
+            Expanded(
+              child: Button(color: Colors.yellow, onpreSS: (){
+                playPiano(3);
+              }),
+            ),
 
-            }),
-            Button(color: Colors.green, onpreSS: (){
+            Expanded(
+              child: Button(color: Colors.purple, onpreSS: (){
+                playPiano(4);
+              }),
+            ),
 
-                final player =AudioPlayer();
-                player.play(AssetSource("note2.wav"));
+            Expanded(
+              child: Button(color: Colors.blue, onpreSS: (){
+                playPiano(5);
+              }),
+            ),
 
+            Expanded(
+              child: Button(color: Colors.orange, onpreSS: (){
+                playPiano(6);
+              }),
+            ),
 
-            }),
-            Button(color: Colors.yellow, onpreSS: (){
+            Expanded(
+              child: Button(color: Colors.cyanAccent, onpreSS: (){
+                playPiano(7);
+              }),
+            ),
 
-                final player =AudioPlayer();
-                player.play(AssetSource("note4.wav"));
-
-
-            }),
-            Button(color: Colors.purple, onpreSS: (){}),
-            Button(color: Colors.blue, onpreSS: (){}),
-            Button(color: Colors.black12, onpreSS: (){}),
-            Button(color: Colors.cyanAccent, onpreSS: (){}),
           ],
         ),
       ),
@@ -51,7 +74,7 @@ class Button extends StatelessWidget {
     return InkWell(
       onTap:onpreSS,
       child: Container(
-        height: 50,
+        height: 100,
         width: double.infinity,
         decoration: BoxDecoration(
           color: color,
