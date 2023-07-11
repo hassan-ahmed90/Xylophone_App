@@ -1,7 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:xylophones_new/main.dart';
+
+import 'package:xylophones_new/xylophone.dart';
 class TextScreen extends StatefulWidget {
   const TextScreen({Key? key}) : super(key: key);
 
@@ -14,16 +15,16 @@ class _TextScreenState extends State<TextScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(Duration(seconds: 5), () {
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>MyApp()));
+    Timer(Duration(seconds: 2), () {
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>Xylophone()));
     });
 
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.cyanAccent,
-      body: Center(child: Text("Play Piano",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 35,color: Colors.black),),),
+      backgroundColor: Colors.black,
+      body: Center(child: Text("Play Piano",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 35,color: Colors.cyanAccent),),),
     );
   }
 }
